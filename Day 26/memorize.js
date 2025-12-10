@@ -53,3 +53,30 @@ function fact(n) {
 let value = Factorial(fact)
 console.log(value(5))
 console.log(value(5))
+
+
+function stringreversal(fn) {
+    let cache = {}
+
+    return function (args) {
+        let keys = JSON.stringify(args)
+        if (keys in cache) {
+            console.log("Already In")
+            return cache[keys]
+        }
+
+        console.log("Not Available in cache")
+        let value = fn(args);
+        cache[keys] = value
+        return value
+    }
+}
+
+function reverse(n) {
+    let result = n.split("").reverse().join('')
+    return console.log(result)
+}
+
+let finalres = stringreversal(reverse)
+finalres("Hello")
+finalres("Hello")

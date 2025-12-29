@@ -62,3 +62,4 @@ function fact(n) {
     return result
 }
 console.log(fact(5))
+
